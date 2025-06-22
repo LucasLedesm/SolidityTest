@@ -24,6 +24,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "createSimpleStorageContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -83,6 +90,62 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "sfGet",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "sfStore",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "simpleStorageArray",
+				"outputs": [
+					{
+						"internalType": "contract SimpleStorage",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_favoriteNumber",
 						"type": "uint256"
 					}
@@ -106,7 +169,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage.sol": "SimpleStorage"
+			"StorageFactory.sol": "StorageFactorty"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -126,6 +189,14 @@
 			"urls": [
 				"bzz-raw://a9db8a48262cb6bd6ac4aed1cdf3fbec7fe31613e72dade935f4b95676e916ea",
 				"dweb:/ipfs/QmQ3JShps4CZcGYWm94aaRnjpafBkXGQADkrLVxpXPDNgd"
+			]
+		},
+		"StorageFactory.sol": {
+			"keccak256": "0x17bbe7edd7ed273894aef13e4578763f7945efdaa11b6bc9193994fbcdebbe18",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a2e5900602a12ece6cef6472700bac46811eef9d6568543ad83cf52bfb264e1a",
+				"dweb:/ipfs/QmW3bkxkfso6ex9wVidAxFWKcox8LgWCPTGNAMhXtNUEgp"
 			]
 		}
 	},

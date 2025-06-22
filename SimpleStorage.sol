@@ -1,35 +1,32 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.24;
+pragma solidity ^0.6.0;
 
 contract SimpleStorage {
-    uint256 Favourite_person;
-
-    struct NewPerson {
+    
+    // this will get initialized to 0!
+    uint256 favoriteNumber;
+    bool favoriteBool;
+    
+    struct People {
+        uint256 favoriteNumber;
         string name;
-        uint favouritePerson;
     }
-    //we mapped to either string or uint
-    mapping(string => uint256) public mapFavouriteNumber;
-    mapping(uint256 => string) public mapFavouriteNumber2;
-
-    //dynamic array to store value
-    NewPerson[] public listofPerson;
-
-    function addPerson(uint _favouritePerson) public virtual {
-        Favourite_person = _favouritePerson;
+    
+    People[] public people;
+    mapping(string => uint256) public nameToFavoriteNumber;
+    
+    function store(uint256 _favoriteNumber) public {
+        favoriteNumber = _favoriteNumber;
     }
-    //pure and view
-    function retrievePerson() public view returns (uint256) {
-        return Favourite_person;
+    
+    function retrieve() public view returns(uint256) {
+        return favoriteNumber;
     }
-
-    //calldata temporary can not change
-    // memory(temporary but can chnage)
-    //storage permanent but can change
-    function addNewPerson(string memory _name, uint _favouritePerson) public {
-        listofPerson.push(NewPerson(_name, _favouritePerson));
-        mapFavouriteNumber[_name] = _favouritePerson;
-        mapFavouriteNumber2[_favouritePerson] = _name;
-    }
+    
+    function addPerson(string memory _name, uint256 _favoriteNumber) public{
+        people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
+    }    
+    
 }
